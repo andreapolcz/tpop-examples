@@ -7,10 +7,10 @@ import north.tpop.core.element.Element;
 
 public class Contact extends Element {
 
-    @Selectable(selectorType = SelectorType.className, selector = "name", pathType = PathType.Relative)
+    @Selectable(by = SelectorType.className, value = "name", pathType = PathType.Relative)
     public Element name;
 
-    @Selectable(selectorType = SelectorType.className, selector = "email", pathType = PathType.Relative)
+    @Selectable(by = SelectorType.className, value = "email", pathType = PathType.Relative)
     public Element email;
 
 }

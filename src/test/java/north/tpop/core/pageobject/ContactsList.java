@@ -9,10 +9,10 @@ import north.tpop.core.element.RepeatableElement;
 
 public class ContactsList extends Element {
 
-    @Selectable(selectorType = SelectorType.tagName, selector = "li", pathType = PathType.Relative)
+    @Selectable(by = SelectorType.tagName, value = "li", pathType = PathType.Relative)
     @RepeatableOver(Contact.class)
     public RepeatableElement<Contact> items;
 
-    @Selectable(selectorType = SelectorType.className, selector = "title", pathType = PathType.Relative)
+    @Selectable(by = SelectorType.className, value = "title", pathType = PathType.Relative)
     public Element title;
 }

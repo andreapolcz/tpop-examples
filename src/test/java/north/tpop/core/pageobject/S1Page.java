@@ -6,12 +6,12 @@ import north.tpop.core.element.Element;
 
 public class S1Page {
 
-    @Selectable(selectorType = SelectorType.id, selector = "showButton")
+    @Selectable(by = SelectorType.id, value = "showButton")
     public Element showButton;
 
-    @Selectable(selectorType = SelectorType.id, selector = "hiddenText")
+    @Selectable(by = SelectorType.id, value = "hiddenText")
     public Element hiddenText;
 
-    @Selectable(selectorType = SelectorType.id, selector = "contacts")
+    @Selectable(by = SelectorType.id, value = "contacts")
     public ContactsList contacts;
 }
