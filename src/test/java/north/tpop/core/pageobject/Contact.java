@@ -1,5 +1,6 @@
 package north.tpop.core.pageobject;
 
+import north.tpop.core.annotation.Path;
 import north.tpop.core.annotation.PathType;
 import north.tpop.core.annotation.Selectable;
 import north.tpop.core.annotation.SelectorType;
@@ -7,10 +8,12 @@ import north.tpop.core.element.Element;
 
 public class Contact extends Element {
 
-    @Selectable(by = SelectorType.className, value = "name", pathType = PathType.Relative)
+    @Path(PathType.Relative)
+    @Selectable(by = SelectorType.className, value = "name")
     public Element name;
 
-    @Selectable(by = SelectorType.className, value = "email", pathType = PathType.Relative)
+    @Path(PathType.Relative)
+    @Selectable(by = SelectorType.className, value = "email")
     public Element email;
 
 }
