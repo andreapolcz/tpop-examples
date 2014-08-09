@@ -34,10 +34,10 @@ public class S1Test {
 
     @Test
     public void wait_until_visible() throws InterruptedException {
-        Assert.assertFalse("red should be hidden", page.hiddenText.getWebElement().isDisplayed());
+        Assert.assertFalse("hiddenText should be hidden", page.hiddenText.getWebElement().isDisplayed());
         page.showButton.execute(new ClickCommand());
         page.hiddenText.wait(new UntilVisible());
-        Assert.assertTrue("red should be visible", page.hiddenText.getWebElement().isDisplayed());
+        Assert.assertTrue("hiddenText should now be be visible", page.hiddenText.getWebElement().isDisplayed());
     }
 
     @Test
