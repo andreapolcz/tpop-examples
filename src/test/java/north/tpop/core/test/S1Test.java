@@ -42,7 +42,7 @@ public class S1Test {
 
     @Test
     public void contact_list_should_contain_items() {
-        List<Contact> items = page.contacts.items.getElements();
+        List<Contact> items = page.contacts.items.getAll();
         Assert.assertEquals("contacts items should contain 3 elements", 3, items.size());
 
         final Contact firstItem = items.get(0);

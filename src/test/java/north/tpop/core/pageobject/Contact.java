@@ -4,7 +4,7 @@ import north.tpop.core.annotation.Path;
 import north.tpop.core.annotation.PathType;
 import north.tpop.core.annotation.Selectable;
 import north.tpop.core.annotation.SelectorType;
-import north.tpop.core.element.Element;
+import north.tpop.core.Element;
 
 public class Contact extends Element {
 

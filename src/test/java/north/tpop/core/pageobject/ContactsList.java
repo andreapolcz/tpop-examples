@@ -5,8 +5,8 @@ import north.tpop.core.annotation.PathType;
 import north.tpop.core.annotation.RepeatableOver;
 import north.tpop.core.annotation.Selectable;
 import north.tpop.core.annotation.SelectorType;
-import north.tpop.core.element.Element;
-import north.tpop.core.element.RepeatableElement;
+import north.tpop.core.Element;
+import north.tpop.core.RepeatableElement;
 
 public class ContactsList extends Element {
 
