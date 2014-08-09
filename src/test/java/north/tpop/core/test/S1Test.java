@@ -42,7 +42,7 @@ public class S1Test {
 
     @Test
     public void contact_list_should_contain_items() {
-        List<Contact> items = page.contacts.items.getAll();
+        List<Contact> items = page.contactsList.contacts.getAll();
         Assert.assertEquals("contacts items should contain 3 elements", 3, items.size());
 
         final Contact firstItem = items.get(0);
@@ -52,7 +52,7 @@ public class S1Test {
 
     @Test
     public void first_item_from_contact_list_should_have_name_andemai() {
-        final Contact firstItem = page.contacts.items.get(0);
+        final Contact firstItem = page.contactsList.contacts.get(0);
         Assert.assertEquals("first contact item should have name First", "First", firstItem.name.getText());
         Assert.assertEquals("first contact item should have email first@first.com", "first@first.com", firstItem.email.getText());
     }

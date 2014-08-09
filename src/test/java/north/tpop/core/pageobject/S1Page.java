@@ -13,5 +13,5 @@ public class S1Page {
     public Element hiddenText;
 
     @Selectable(by = SelectorType.id, value = "contacts")
-    public ContactsList contacts;
+    public ContactsList contactsList;
 }
