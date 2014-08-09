@@ -50,4 +50,11 @@ public class S1Test {
         Assert.assertEquals("first contact item should have email first@first.com", "first@first.com", firstItem.email.getText());
     }
 
+    @Test
+    public void first_item_from_contact_list_should_have_name_andemai() {
+        final Contact firstItem = page.contacts.items.get(0);
+        Assert.assertEquals("first contact item should have name First", "First", firstItem.name.getText());
+        Assert.assertEquals("first contact item should have email first@first.com", "first@first.com", firstItem.email.getText());
+    }
+
 }
