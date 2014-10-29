@@ -16,19 +16,15 @@ public class S1Test {
 
     private HtmlUnitDriver driver;
     private S1Page page;
-    private boolean initialized = false;
 
     @Before
     public void setup() {
-        if (!initialized) {
-            driver = new HtmlUnitDriver(BrowserVersion.CHROME);
-            driver.setJavascriptEnabled(true);
+        driver = new HtmlUnitDriver(BrowserVersion.CHROME);
+        driver.setJavascriptEnabled(true);
 
-            PageObjectFactory pageObjectFactory = new PageObjectFactory(driver);
-            page = pageObjectFactory.newPageObject(S1Page.class);
+        PageObjectFactory pageObjectFactory = new PageObjectFactory(driver);
+        page = pageObjectFactory.newPageObject(S1Page.class);
 
-            initialized = true;
-        }
         driver.get("http://localhost:8085/view/s1.html");
     }
 
