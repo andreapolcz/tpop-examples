@@ -1,12 +1,15 @@
 package north.tpop.core.test;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
+import java.time.Duration;
 import java.util.List;
 import north.tpop.core.pageobject.Contact;
 import north.tpop.core.PageObjectFactory;
+import north.tpop.core.WaitExecutor;
 import north.tpop.core.pageobject.S1Page;
 import north.tpop.core.command.ClickCommand;
-import north.tpop.core.until.UntilVisible;
+import north.tpop.core.wait.IsVisible;
+import north.tpop.core.wait.SeleniumWaitExecutor;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +25,9 @@ public class S1Test {
         driver = new HtmlUnitDriver(BrowserVersion.CHROME);
         driver.setJavascriptEnabled(true);
 
-        PageObjectFactory pageObjectFactory = new PageObjectFactory(driver);
+        WaitExecutor waitExecutor = new SeleniumWaitExecutor(driver, Duration.ofSeconds(5));
+
+        PageObjectFactory pageObjectFactory = new PageObjectFactory(driver, waitExecutor);
         page = pageObjectFactory.newPageObject(S1Page.class);
 
         driver.get("http://localhost:8085/view/s1.html");
@@ -32,7 +37,7 @@ public class S1Test {
     public void wait_until_visible() throws InterruptedException {
         Assert.assertFalse("hiddenText should be hidden", page.hiddenText.getWebElement().isDisplayed());
         page.showButton.execute(new ClickCommand());
-        page.hiddenText.wait(new UntilVisible());
+        page.hiddenText.wait(new IsVisible());
         Assert.assertTrue("hiddenText should now be be visible", page.hiddenText.getWebElement().isDisplayed());
     }
 
